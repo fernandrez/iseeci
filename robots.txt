@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /*news/printNews
+Disallow: /*news/printPosts
+Allow: /
+Allow: /css/
+Allow: /assets/
+Allow: /images/
+
+Sitemap: http://www.iseeci.com/sitemap.xml

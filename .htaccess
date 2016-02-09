@@ -1,0 +1,23 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+RewriteCond %{HTTP_REFERER} semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} best\-seo\-software\.xyz [NC,OR]
+RewriteCond %{HTTP_REFERER} floating\-share\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} get\-free\-social\-traffic\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} free\-floating\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} video\-\-production\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} event\-tracking\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} rankings\-analytics\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} Get\-Free\-Traffic\-Now\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} justprofit\.xyz [NC,OR]
+RewriteCond %{HTTP_REFERER} rednise\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} 98\.139\.237\.209 [NC,OR]
+RewriteCond %{HTTP_REFERER} seoanalyses\.com [NC]
+RewriteRule .* - [F]
+
+RewriteCond %{HTTP_HOST} ^iseeci\.com$ [NC]
+RewriteRule ^(.*)$ http://www.iseeci.com/$1 [R=301,L]
