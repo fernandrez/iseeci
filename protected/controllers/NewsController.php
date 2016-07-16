@@ -204,13 +204,15 @@ class NewsController extends Controller
 											  )
 									   );
 				$newPost->save();	
+                
+                echo '<pre>'; var_dump($newPost->errors);
 			}
 		}
 		if(isset($_POST['ajax']) || Yii::app()->request->isAjaxRequest){
 			if($update==true){
 				$criteria=new CDbCriteria;
 				$criteria->condition='type="link"';
-				$criteria->order='facebook_post_id DESC';
+				$criteria->order='created_time DESC';
 				$criteria->limit=Yii::app()->params['numFbPosts'];
 				
 				$dataProvider=new CActiveDataProvider('Post',array('criteria'=>$criteria));
@@ -224,7 +226,7 @@ class NewsController extends Controller
 	public function actionPrintPosts(){
 		$criteria=new CDbCriteria;
 		$criteria->compare('type',"link");
-		$criteria->order='facebook_post_id DESC';
+		$criteria->order='created_time DESC';
 		$criteria->limit=Yii::app()->params['numFbPosts'];
 		
 		$dataProvider=new CActiveDataProvider('Post',array('criteria'=>$criteria));

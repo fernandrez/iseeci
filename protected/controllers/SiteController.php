@@ -98,8 +98,8 @@ class SiteController extends Controller
 				);		
 		$criteria=new CDbCriteria;
 		$criteria->condition='type="link"';
-		$criteria->order='facebook_post_id DESC';
-		$criteria->limit=Yii::app()->params['numFbPosts'];
+		$criteria->order='created_time DESC';
+		//$criteria->limit=Yii::app()->params['numFbPosts'];
 		
 		$dataProvider=new CActiveDataProvider('Post',array('criteria'=>$criteria));
 		$pars['dataProvider']=$dataProvider;
