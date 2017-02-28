@@ -7,10 +7,10 @@ $configMain = require(dirname(__FILE__) . '/protected/config/main.php');
 $configLocal = require(dirname(__FILE__) . '/protected/config/local.php');
 
 // remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
+//defined('YII_DEBUG') or define('YII_DEBUG',true);
 // specify how many levels of call stack should be shown in each log message
-defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
-
+//defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+require_once __DIR__ . '/protected/modules/facebook/autoload.php';
 require_once($yii);
 $config = CMap::mergeArray($configMain, $configLocal);
 Yii::createWebApplication($config)->run();
